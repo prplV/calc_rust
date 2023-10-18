@@ -47,6 +47,10 @@ impl Calc{
         if witness == 0{
             return "null".to_string();
         }
+        if witness < 0{
+            witness = witness.abs();
+            roman_output = roman_output + "-";
+        }
 
         for (key, value) in &self.roman_nums_map {
             if (value == &100) || (value == &50) {
